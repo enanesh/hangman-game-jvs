@@ -6,9 +6,12 @@ var usedGuess = [];
 var words = ["timer", "node", "cable", "computer", "code", "JavaScript", "variable", "patas",]
 var fixedArray = [];
 var alphabet = ["a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', z",];
-var secondsLeft = 20;//keeps track of the seconds left in countdown
+var secondsLeft = 5;//keeps track of the seconds left in countdown
 var leftLetter = 0;
-//Creates a random selection from the words array
+
+    
+    
+// Creates a random selection from the words array
 //var randomWord = words[Math.floor(Math.random() * words.length)];
 var randomWord = "perro";
 console.log(randomWord);
@@ -30,16 +33,24 @@ function game() {
 
     leftLetter = fixedArray.length;
 
+    setTime();
 
 }
 
 
 function setTime() {
     var timerInterval = setInterval(function () {
-        secondsLeft--;
-        if (secondsLeft == 0) {
+        var time = document.getElementById("grid-item2");
+        time.innerHTML = secondsLeft;
+        
 
+        if (secondsLeft === 0) {
+            clearInterval(timerInterval);
+           
         }
+        secondsLeft--;
+
+        
 
     }, 1000);
 
@@ -52,7 +63,6 @@ function userpress(event) {
 
 
     // Me dice en que lugar estan las letras que agrego el usuario
-
 
 
     const indexes = [];
@@ -69,8 +79,11 @@ function userpress(event) {
         if (randomWord === userGuess) {
             indexes.push(i);
             console.log("You won!");
-
             wins = wins + 1;
+            var victorias = document.getElementById("grid-item2");
+
+            victorias.innerHTML = wins;
+
             return;
 
         }
