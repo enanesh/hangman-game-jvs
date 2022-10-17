@@ -64,10 +64,36 @@ padding-top: 90px;
 
 .grid-item2 {
     background-image: linear-gradient(45deg,rgb(246, 188, 55),beige);
-    
     border: 4px solid #fff;
-    padding: 40px;
     font-size: 30px;
     text-align: center;
     border-radius: 7px;
+    height: 400px;
+}
+
+.wins{
+    text-align: top left;
+    position: absolute;
+    margin-bottom: 200px;
+    margin-top: 1cm;
+    margin-left: 1cm;
+
+}
+
+.losses {
+    text-align: bottom left;
+    position:absolute;
+    margin-top: 2cm;
+    margin-left: 1cm;
+
+}
+
+.timer{
+    position: absolute;
+    margin-top: 6cm;
+    text-align: center;
+    padding: 40px;
+    background-color: blue;
+    border-radius: 7px;
+    color:white;
 }
